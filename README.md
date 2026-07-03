@@ -1,17 +1,71 @@
-# React + Vite
+# Hospital Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React ve Vite ile geliştirilmiş, rol tabanlı erişim kontrolüne sahip hastane yönetim sistemi.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Sistemde dört farklı kullanıcı rolü bulunmaktadır:
 
-## React Compiler
+**Hasta**
+- Randevu alma ve randevuları görüntüleme
+- Reçete görüntüleme
+- Test sonuçlarını takip etme
+- Bağımlı profil yönetimi
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Doktor**
+- Hasta kayıtlarını görüntüleme
+- Program/takvim yönetimi
+- Reçete yönetimi
+- Dashboard ile genel özet
 
-## Expanding the ESLint configuration
+**Hemşire**
+- Hasta kayıtları ve takip
+- Program görüntüleme
+- Bakım veren yönetimi
+- Dashboard
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# hospital-management-system
+**Ön Büro**
+- Randevu yönetimi (manuel randevu dahil)
+- Personel yönetimi
+- Doktor program yönetimi
+- Test durum takibi
+
+## Teknolojiler
+
+- **React 19** — UI
+- **React Router v7** — Sayfa yönlendirme
+- **Tailwind CSS v4** — Stil
+- **Heroicons** — İkonlar
+- **Vite** — Build aracı
+
+## Kurulum
+
+```bash
+npm install
+npm run dev
+```
+
+Uygulama `http://localhost:5173` adresinde çalışır.
+
+## Diğer Komutlar
+
+```bash
+npm run build    # Production build
+npm run preview  # Build sonrasını önizleme
+npm run lint     # ESLint kontrolü
+```
+
+## Proje Yapısı
+
+```
+src/
+├── components/     # Paylaşılan bileşenler (Navbar, Layout, AuthShell vb.)
+├── context/        # AppContext — global state yönetimi
+├── data/           # Mock veri (mockData.js)
+├── pages/
+│   ├── doktor/     # Doktor sayfaları
+│   ├── hasta/      # Hasta sayfaları
+│   ├── hemsire/    # Hemşire sayfaları
+│   └── onBuro/     # Ön büro sayfaları
+└── utils/          # Yardımcı fonksiyonlar
+```
